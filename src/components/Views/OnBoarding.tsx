@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
 import Carousel, { Pagination } from 'react-native-snap-carousel'
-import data from '../screens/OnBoarding/constants'
-import { getHeight, getWidth, fontFamily } from '../utils/styles'
-import colors from '../utils/colors'
+import data from '../../screens/OnBoarding/constants'
+import { getHeight, getWidth, fontFamily } from '../../utils/styles'
+import colors from '../../utils/colors'
 
 const OnBoarding = ({ navigation }: any) => {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -25,7 +25,7 @@ const OnBoarding = ({ navigation }: any) => {
           inactiveDotStyle={styles.inactiveDot}
           inactiveDotOpacity={0.4}
         />
-        {activeSlide === 4 && navigation.replace('OnBoardingScreen')}
+        {activeSlide === 4 && navigation.replace('SignupScreen')}
       </View>
     )
   }

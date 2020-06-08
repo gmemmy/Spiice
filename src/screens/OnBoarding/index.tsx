@@ -7,7 +7,8 @@ import styles from './styles'
 const bubblesBackground = require('../../../assets/images/bubbles.png')
 
 // components
-import OnBoarding from '../../components/OnBoarding'
+import OnBoarding from '../../components/Views/OnBoarding'
+import Button from '../../components/Widgets/Button'
 
 const OnBoardingScreen = ({ navigation }: any) => {
   const [onScreen1, setOnScreen1] = useState(true)
@@ -17,12 +18,10 @@ const OnBoardingScreen = ({ navigation }: any) => {
         <Fragment>
           <Text style={styles.title}>Spiice</Text>
           <View style={styles.bottomContainer}>
-            <TouchableOpacity
-              style={styles.button}
+            <Button
+              buttonText="Discover the platform"
               onPress={() => setOnScreen1(false)}
-            >
-              <Text style={styles.buttonText}>Discover the Platform</Text>
-            </TouchableOpacity>
+            />
             <View style={styles.questionContainer}>
               <Text style={styles.question}>You have an account?</Text>
               <TouchableOpacity
