@@ -5,14 +5,34 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "prettier": "prettier './src/**/*.{ts,tsx}' --single-quote --no-semi --write"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "npm run prettier",
+      "git add"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "npm run prettier",
+      "git add"
+    ]
   },
   "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.5.1",
+    "@react-navigation/stack": "^5.5.1",
+    "@types/react-native-snap-carousel": "^3.8.1",
     "expo": "~37.0.3",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+    "react-native-responsive-screen": "^1.4.1",
+    "react-native-safe-area-context": "^3.0.2",
     "react-native-screens": "~2.2.0",
+    "react-native-snap-carousel": "^3.9.1",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
