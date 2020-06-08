@@ -25,7 +25,7 @@ const OnBoarding = ({ navigation }: any) => {
           inactiveDotStyle={styles.inactiveDot}
           inactiveDotOpacity={0.4}
         />
-        {activeSlide === 4 && navigation.replace('SignupScreen')}
+        {activeSlide === 4 && navigation.replace('SignUpScreen')}
       </View>
     )
   }

@@ -7,7 +7,13 @@ import colors from '../../utils/colors'
 import CustomTextInput from '../Widgets/TextInput'
 import Button from '../Widgets/Button'
 
-const Authentication = ({ header, width, height }: any) => {
+const Authentication = ({
+  header,
+  width,
+  height,
+  navigation,
+  navigationLabel,
+}: any) => {
   return (
     <Fragment>
       <View
@@ -18,8 +24,20 @@ const Authentication = ({ header, width, height }: any) => {
       >
         <Text style={styles.header}>{header}</Text>
         <View style={styles.textInputContainer}>
-          <CustomTextInput height={52} width={295} placeholder="First name" />
-          <CustomTextInput height={52} width={295} placeholder="Last name" />
+          {navigationLabel === 'LogInScreen' && (
+            <Fragment>
+              <CustomTextInput
+                height={52}
+                width={295}
+                placeholder="First name"
+              />
+              <CustomTextInput
+                height={52}
+                width={295}
+                placeholder="Last name"
+              />
+            </Fragment>
+          )}
           <CustomTextInput height={52} width={295} placeholder="Email" />
           <CustomTextInput height={52} width={295} placeholder="Password" />
         </View>
@@ -28,14 +46,17 @@ const Authentication = ({ header, width, height }: any) => {
         <Button buttonText={header} />
         <View style={styles.questionContainer}>
           <Text style={styles.question}>You have an account?</Text>
-          <TouchableOpacity style={{ marginLeft: getWidth(5) }}>
+          <TouchableOpacity
+            style={{ marginLeft: getWidth(5) }}
+            onPress={() => navigation.navigate(navigationLabel)}
+          >
             <Text
               style={[
                 styles.question,
                 { fontFamily: fontFamily.FONT_FAMILY_MEDIUM },
               ]}
             >
-              Login
+              {navigationLabel === 'LogInScreen' ? 'Login' : 'Signup'}
             </Text>
           </TouchableOpacity>
         </View>
