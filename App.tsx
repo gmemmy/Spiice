@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, useReducer } from 'react';
 import { View } from 'react-native'
 import * as Font from 'expo-font'
-import Navigator from './src/navigator'
+import { Navigator, MyTabs } from './src/navigator'
+import Store from './src/context/store'
+import rootReducer from './src/reducers'
+import initialState from './src/reducers/initialState'
+import getActions from './src/actions/'
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false)
+  const [state, dispatch] = useReducer(rootReducer, initialState)
 
   useEffect(() => {
     Font.loadAsync({
@@ -22,6 +27,8 @@ export default function App() {
     return <View />
   }
   return (
-    <Navigator />
+    <Store.Provider value={{ ...state, ...getActions(dispatch) }}>
+      {state.user.isAuthenticated ? <MyTabs /> :  <Navigator />}
+    </Store.Provider>
   );
 }

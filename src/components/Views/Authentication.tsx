@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { getHeight, getWidth, fontFamily } from '../../utils/styles'
 import colors from '../../utils/colors'
+import store from '../../context/store'
 
 // components
 import CustomTextInput from '../Widgets/TextInput'
@@ -14,6 +15,7 @@ const Authentication = ({
   navigation,
   navigationLabel,
 }: any) => {
+  const context = useContext<any>(store)
   return (
     <Fragment>
       <View
@@ -43,7 +45,12 @@ const Authentication = ({
         </View>
       </View>
       <View style={styles.bottomContainer}>
-        <Button buttonText={header} />
+        <Button
+          buttonText={header}
+          onPress={() => {
+            context.setIsAuthenticated(true)
+          }}
+        />
         <View style={styles.questionContainer}>
           <Text style={styles.question}>You have an account?</Text>
           <TouchableOpacity

@@ -28,6 +28,7 @@ const OnBoardingScreen = ({ navigation }: any) => {
                 style={{ marginLeft: getWidth(5) }}
                 onPress={() => {
                   setOnScreen1(false)
+                  navigation.navigate('LogInScreen')
                 }}
               >
                 <Text
