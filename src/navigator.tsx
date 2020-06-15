@@ -14,6 +14,9 @@ import SearchScreen from './screens/Search'
 
 // images
 const homeIcon = require('../assets/home.png')
+const activeHomeIcon = require('../assets/active-home.png')
+const searchIcon = require('../assets/search.png')
+const activeSearchIcon = require('../assets/active-search.png')
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -30,7 +33,7 @@ export const Navigator = () => {
   )
 }
 
-export const MyTabs = () => {
+export const TabNavigator = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator tabBarOptions={{ showLabel: false }}>
@@ -38,14 +41,48 @@ export const MyTabs = () => {
           name="Feed"
           component={ResumeScreen}
           options={{
-            tabBarIcon: () => <Image source={homeIcon} style={styles.icon} />,
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <Image source={activeHomeIcon} style={styles.icon} />
+              ) : (
+                <Image source={homeIcon} style={styles.icon} />
+              ),
           }}
         />
         <Tab.Screen
           name="Search"
           component={SearchScreen}
           options={{
-            tabBarIcon: () => <Image source={homeIcon} style={styles.icon} />,
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <Image source={activeSearchIcon} style={styles.icon} />
+              ) : (
+                <Image source={searchIcon} style={styles.icon} />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="Boo"
+          component={SearchScreen}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <Image source={activeSearchIcon} style={styles.icon} />
+              ) : (
+                <Image source={searchIcon} style={styles.icon} />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="Hey"
+          component={SearchScreen}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <Image source={activeSearchIcon} style={styles.icon} />
+              ) : (
+                <Image source={searchIcon} style={styles.icon} />
+              ),
           }}
         />
       </Tab.Navigator>

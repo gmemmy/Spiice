@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext, useReducer } from 'react';
 import { View } from 'react-native'
 import * as Font from 'expo-font'
-import { Navigator, MyTabs } from './src/navigator'
+import { Navigator, TabNavigator } from './src/navigator'
 import Store from './src/context/store'
 import rootReducer from './src/reducers'
 import initialState from './src/reducers/initialState'
@@ -28,7 +28,7 @@ export default function App() {
   }
   return (
     <Store.Provider value={{ ...state, ...getActions(dispatch) }}>
-      {state.user.isAuthenticated ? <MyTabs /> :  <Navigator />}
+      {state.user.isAuthenticated ? <TabNavigator /> :  <Navigator />}
     </Store.Provider>
   );
 }
