@@ -9,7 +9,7 @@ import { getHeight, fontFamily, getWidth } from '../../../utils/styles'
 // components
 import Card from '../../../components/Widgets/Card'
 
-const ResumeScreen = () => {
+const ResumeScreen = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Feed</Text>
@@ -46,7 +46,7 @@ const ResumeScreen = () => {
             27K
           </Text>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Details')}>
               <Image
                 style={styles.dropdown}
                 source={require('../../../../assets/dropdown.png')}

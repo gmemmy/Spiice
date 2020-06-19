@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext, useReducer } from 'react';
 import { View } from 'react-native'
 import * as Font from 'expo-font'
-import { Navigator, TabNavigator } from './src/navigator'
+import { Navigator, TabNavigator } from './src/navigation/navigator'
 import Store from './src/context/store'
 import rootReducer from './src/reducers'
 import initialState from './src/reducers/initialState'
