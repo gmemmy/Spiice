@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 // Feed Screens
 import ResumeScreen from '../screens/Feed/Resume'
 import DetailsScreen from '../screens/Feed/Details'
+import ProjectScreen from '../screens/Feed/Project'
 
 const Stack = createStackNavigator()
 
@@ -14,8 +15,9 @@ const Feed = () => {
         headerShown: false,
       }}
     >
-      {/* <Stack.Screen name="Resume" component={ResumeScreen} /> */}
+      <Stack.Screen name="Resume" component={ResumeScreen} />
       <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen name="Project" component={ProjectScreen} />
     </Stack.Navigator>
   )
 }

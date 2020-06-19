@@ -4,16 +4,12 @@ import styles from './styles'
 
 // components
 import DropDown from '../../../components/Widgets/DropdownContainer'
+import BackButton from '../../../components/Widgets/BackButton'
 
-const backButton = require('../../../../assets/back.png')
-
-const Details = () => {
+const Details = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backContainer}>
-        <Image style={styles.backImage} source={backButton} />
-        <Text style={styles.backText}>Back</Text>
-      </TouchableOpacity>
+      <BackButton navigation={navigation} />
       <Text style={styles.header}>DETAILS</Text>
       <View style={styles.dropDownContainer}>
         <DropDown title="Total Gains" amount="27k" />

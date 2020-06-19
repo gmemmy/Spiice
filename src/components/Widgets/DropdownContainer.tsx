@@ -3,6 +3,9 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native'
 import { getHeight, getWidth, fontFamily } from '../../utils/styles'
 import colors from '../../utils/colors'
 
+// components
+import BarchartView from './BarChart'
+
 const dropDown = require('../../../assets/dropdown2.png')
 const dropUp = require('../../../assets/dropUp.png')
 
@@ -22,7 +25,7 @@ const DropDown = ({ title, amount }: any) => {
       </TouchableOpacity>
       {showDetails && (
         <View style={styles.detailsContainer}>
-          <Text>Hello there</Text>
+          <BarchartView />
         </View>
       )}
     </View>
@@ -44,12 +47,14 @@ const styles = StyleSheet.create({
   },
   amount: {
     marginLeft: 'auto',
+    fontSize: getHeight(30),
+    fontFamily: fontFamily.FONT_FAMILY_BOLD,
   },
   icon: {
-    width: getWidth(18),
-    height: getHeight(18),
+    width: getWidth(17),
+    height: getHeight(17),
     resizeMode: 'contain',
-    marginLeft: getWidth(5),
+    marginLeft: getWidth(8),
   },
   title: {
     fontSize: getHeight(18),
@@ -58,6 +63,8 @@ const styles = StyleSheet.create({
   detailsContainer: {
     paddingHorizontal: getWidth(20),
     paddingVertical: getHeight(20),
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 })
 

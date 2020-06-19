@@ -1,13 +1,12 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import { BarChart } from 'react-native-chart-kit'
-import { barChartData, chartConfig } from './constants'
 import styles from './styles'
 import colors from '../../../utils/colors'
 import { getHeight, fontFamily, getWidth } from '../../../utils/styles'
 
 // components
 import Card from '../../../components/Widgets/Card'
+import BarChartView from '../../../components/Widgets/BarChart'
 
 const ResumeScreen = ({ navigation }: any) => {
   return (
@@ -15,17 +14,7 @@ const ResumeScreen = ({ navigation }: any) => {
       <Text style={styles.header}>Feed</Text>
       <Text style={styles.subHeader}>Resume</Text>
       <View style={styles.chartView}>
-        <BarChart
-          data={barChartData}
-          width={getWidth(200)}
-          height={getHeight(220)}
-          yAxisLabel="$"
-          yAxisSuffix="k"
-          chartConfig={chartConfig}
-          verticalLabelRotation={30}
-          showBarTops={true}
-          withInnerLines={false}
-        />
+        <BarChartView />
         <View style={styles.stats}>
           <Text
             style={{
@@ -73,11 +62,17 @@ const ResumeScreen = ({ navigation }: any) => {
           </TouchableOpacity>
         </View>
         <View style={styles.cardView}>
-          <Card header="Wireframes" name="Francisco Fischer" status="Active" />
+          <Card
+            header="Wireframes"
+            name="Francisco Fischer"
+            status="Active"
+            navigation={navigation}
+          />
           <Card
             header="Software Development"
             name="Amel Rio"
             status="Pending"
+            navigation={navigation}
           />
         </View>
       </View>

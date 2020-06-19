@@ -3,9 +3,12 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { getWidth, getHeight, fontFamily } from '../../utils/styles'
 import colors from '../../utils/colors'
 
-const Card = ({ header, name, status }: any) => {
+const Card = ({ header, name, status, navigation }: any) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Project')}
+      style={styles.container}
+    >
       <View>
         <Text style={styles.header}>{header}</Text>
         <Text style={styles.name}>{name}</Text>
