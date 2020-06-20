@@ -7,6 +7,7 @@ const colors = {
   LILAC: '#FBEEFF',
   ROYAL_PURPLE: '#99879D',
   BABY_PURPLE: '#FAF9FE',
+  GRAY: '#EFEDF0',
 }
 
 export default colors

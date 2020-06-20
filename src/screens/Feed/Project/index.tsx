@@ -19,7 +19,7 @@ const Project = ({ navigation }: any) => {
         </Text>
         <Text style={styles.deadline}>Deadline 28/03/2020</Text>
       </View>
-      <Profile />
+      <Profile marginTop={30} />
       <Text style={styles.timeline}>Posted 8 days ago</Text>
       <View style={styles.bio}>
         <Text style={styles.bioHeader}>WireFrames</Text>

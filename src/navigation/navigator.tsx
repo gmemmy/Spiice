@@ -6,12 +6,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { getWidth } from '../utils/styles'
 
 import Feed from './feed'
+import Search from './search'
 
 // components
 import OnBoardingScreen from '../screens/OnBoarding'
 import SignUpScreen from '../screens/Authentication/SignUp'
 import LogInScreen from '../screens/Authentication/LogIn'
-import SearchScreen from '../screens/Search'
 
 // images
 const homeIcon = require('../../assets/home.png')
@@ -56,7 +56,7 @@ export const TabNavigator = () => {
         />
         <Tab.Screen
           name="Search"
-          component={SearchScreen}
+          component={Search}
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (
@@ -68,7 +68,7 @@ export const TabNavigator = () => {
         />
         <Tab.Screen
           name="Boo"
-          component={SearchScreen}
+          component={Search}
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (
@@ -80,7 +80,7 @@ export const TabNavigator = () => {
         />
         <Tab.Screen
           name="Hey"
-          component={SearchScreen}
+          component={Search}
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (

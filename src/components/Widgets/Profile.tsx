@@ -5,9 +5,11 @@ import colors from '../../utils/colors'
 
 const avatar = require('../../../assets/images/illustrations/avatar.png')
 
-const Profile = () => {
+const Profile = ({ marginTop }: any) => {
   return (
-    <View style={styles.profileContainer}>
+    <View
+      style={[styles.profileContainer, { marginTop: getHeight(marginTop) }]}
+    >
       <Image style={styles.avatar} source={avatar} />
       <Text style={styles.profileName}>Francisco Fischer</Text>
     </View>
@@ -19,7 +21,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: getHeight(20),
-    marginTop: getHeight(30),
   },
   avatar: {
     width: getWidth(48),

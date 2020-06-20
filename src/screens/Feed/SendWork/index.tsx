@@ -44,7 +44,7 @@ const SendWork = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <BackButton navigation={navigation} />
-      <Profile />
+      <Profile marginTop={30} />
       <View style={styles.messageContainer}>
         <Text style={styles.title}>Send your work</Text>
         <TextInput
