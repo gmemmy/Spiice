@@ -4,11 +4,10 @@ import styles from './styles'
 import colors from '../../../utils/colors'
 import { getHeight, fontFamily } from '../../../utils/styles'
 
-const avatar = require('../../../../assets/images/illustrations/avatar.png')
-
 // components
 import BackButton from '../../../components/Widgets/BackButton'
 import Button from '../../../components/Widgets/Button'
+import Profile from '../../../components/Widgets/Profile'
 
 const Project = ({ navigation }: any) => {
   return (
@@ -20,10 +19,7 @@ const Project = ({ navigation }: any) => {
         </Text>
         <Text style={styles.deadline}>Deadline 28/03/2020</Text>
       </View>
-      <View style={styles.profileContainer}>
-        <Image style={styles.avatar} source={avatar} />
-        <Text style={styles.profileName}>Francisco Fischer</Text>
-      </View>
+      <Profile />
       <Text style={styles.timeline}>Posted 8 days ago</Text>
       <View style={styles.bio}>
         <Text style={styles.bioHeader}>WireFrames</Text>
@@ -46,7 +42,10 @@ const Project = ({ navigation }: any) => {
         <Text style={styles.price}>$ 600</Text>
       </View>
       <View style={styles.buttonView}>
-        <Button buttonText="Send your work" />
+        <Button
+          buttonText="Send your work"
+          onPress={() => navigation.navigate('SendWork')}
+        />
       </View>
     </View>
   )

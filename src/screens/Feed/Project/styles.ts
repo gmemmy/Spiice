@@ -5,6 +5,7 @@ import colors from '../../../utils/colors'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.BABY_PURPLE,
   },
   headerBanner: {
     height: getHeight(82),
@@ -24,22 +25,6 @@ const styles = StyleSheet.create({
     color: colors.WHITE,
     marginTop: getHeight(5),
     fontFamily: fontFamily.FONT_FAMILY_REGULAR,
-  },
-  profileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: getHeight(20),
-    marginTop: getHeight(30),
-  },
-  avatar: {
-    width: getWidth(48),
-    height: getHeight(48),
-    resizeMode: 'contain',
-  },
-  profileName: {
-    fontFamily: fontFamily.FONT_FAMILY_BOLD,
-    fontSize: getHeight(22),
-    marginLeft: getWidth(10),
   },
   timeline: {
     marginLeft: getWidth(20),

@@ -18,6 +18,10 @@ const homeIcon = require('../../assets/home.png')
 const activeHomeIcon = require('../../assets/active-home.png')
 const searchIcon = require('../../assets/search.png')
 const activeSearchIcon = require('../../assets/active-search.png')
+const messageIcon = require('../../assets/message.png')
+const activeMessageIcon = require('../../assets/active-message.png')
+const profileIcon = require('../../assets/profile.png')
+const activeProfileIcon = require('../../assets/active-profile.png')
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -68,9 +72,9 @@ export const TabNavigator = () => {
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Image source={activeSearchIcon} style={styles.icon} />
+                <Image source={activeMessageIcon} style={styles.icon} />
               ) : (
-                <Image source={searchIcon} style={styles.icon} />
+                <Image source={messageIcon} style={styles.icon} />
               ),
           }}
         />
@@ -80,9 +84,9 @@ export const TabNavigator = () => {
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Image source={activeSearchIcon} style={styles.icon} />
+                <Image source={activeProfileIcon} style={styles.icon} />
               ) : (
-                <Image source={searchIcon} style={styles.icon} />
+                <Image source={profileIcon} style={styles.icon} />
               ),
           }}
         />

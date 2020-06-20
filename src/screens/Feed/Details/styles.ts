@@ -5,6 +5,7 @@ import colors from '../../../utils/colors'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.BABY_PURPLE,
   },
   header: {
     marginLeft: getWidth(20),
