@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     color: colors.ROYAL_PURPLE,
     lineHeight: getHeight(30),
     fontFamily: fontFamily.FONT_FAMILY_REGULAR,
-    marginTop: getHeight(5),
+    marginTop: getHeight(4),
   },
 })
 
