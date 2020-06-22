@@ -101,7 +101,12 @@ const styles = StyleSheet.create({
     color: colors.ROYAL_PURPLE,
     lineHeight: getHeight(30),
     fontFamily: fontFamily.FONT_FAMILY_REGULAR,
-    marginTop: getHeight(4),
+    marginTop: getHeight(5),
+  },
+  tagContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: getWidth(270),
   },
 })
 

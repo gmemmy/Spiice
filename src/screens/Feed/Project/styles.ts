@@ -56,16 +56,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: getWidth(20),
     justifyContent: 'space-between',
   },
-  wireframesContainer: {
-    height: getHeight(24),
-    width: getWidth(89),
-    borderColor: colors.ROYAL_PURPLE,
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: getHeight(5),
-    fontSize: getHeight(10),
-  },
   price: {
     fontSize: getHeight(16),
     color: colors.LIGHT_PURPLE,

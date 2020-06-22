@@ -8,6 +8,7 @@ import { getHeight, fontFamily } from '../../../utils/styles'
 import BackButton from '../../../components/Widgets/BackButton'
 import Button from '../../../components/Widgets/Button'
 import Profile from '../../../components/Widgets/Profile'
+import Tag from '../../../components/Widgets/Tag'
 
 const Project = ({ navigation }: any) => {
   return (
@@ -34,11 +35,7 @@ const Project = ({ navigation }: any) => {
         </View>
       </View>
       <View style={styles.priceContainer}>
-        <View style={styles.wireframesContainer}>
-          <Text style={{ fontSize: getHeight(13), color: colors.ROYAL_PURPLE }}>
-            WIREFRAME
-          </Text>
-        </View>
+        <Tag text="WIREFRAMES" />
         <Text style={styles.price}>$ 600</Text>
       </View>
       <View style={styles.buttonView}>
