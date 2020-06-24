@@ -5,8 +5,10 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { getWidth } from '../utils/styles'
 
+// Bottom Navigator Screens
 import Feed from './feed'
 import Search from './search'
+import Chat from './chat'
 
 // components
 import OnBoardingScreen from '../screens/OnBoarding'
@@ -67,8 +69,8 @@ export const TabNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="Boo"
-          component={Search}
+          name="Chat"
+          component={Chat}
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (

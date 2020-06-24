@@ -81,6 +81,7 @@ const Application = ({ navigation }: any) => {
             </View>
           </TouchableOpacity>
         )}
+        keyExtractor={(item: any) => item.id}
       />
     </View>
   )
