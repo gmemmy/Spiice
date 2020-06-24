@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 // Search Screens
 import Application from '../screens/Search/CreateApplication'
+import Proposition from '../screens/Search/MakeProposition'
 
 const Stack = createStackNavigator()
 
@@ -14,6 +15,7 @@ const Search = () => {
       }}
     >
       <Stack.Screen name="Application" component={Application} />
+      <Stack.Screen name="Proposition" component={Proposition} />
     </Stack.Navigator>
   )
 }

@@ -5,15 +5,18 @@ import {
   TextInput,
   Image,
   TouchableOpacity,
-  ScrollView,
+  FlatList,
 } from 'react-native'
 import styles from './styles'
+import data from './constants'
 
 // components
 import Profile from '../../../components/Widgets/Profile'
 import Tag from '../../../components/Widgets/Tag'
+import colors from '../../../utils/colors'
+import { getHeight, fontFamily } from '../../../utils/styles'
 
-const Application = () => {
+const Application = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Search</Text>
@@ -33,65 +36,52 @@ const Application = () => {
         />
         <Text style={styles.filterText}>Filters</Text>
       </TouchableOpacity>
-      <ScrollView>
-        <View style={styles.projectContainer}>
-          <View style={styles.profileContainer}>
-            <Profile marginTop={0} />
-          </View>
-          <View style={styles.application}>
-            <Text style={styles.timeline}>Posted 8 days ago</Text>
-            <Text style={styles.applicationHeader}>Create an application</Text>
-            <Text style={styles.description}>Description</Text>
-            <Text style={styles.applicationText}>
-              I need a designer for my new website.{'\n'}
-              The project is just at the beginning and I{'\n'}
-              need wireframes before I start coding the{'\n'}
-              website. I only want fireframes and I don't{'\n'}
-              want prototype or UI design.{'\n'}
-            </Text>
-            <View style={styles.tagContainer}>
-              <Tag text="UX/UI" />
-              <Tag text="DESIGN" />
-              <Tag text="FIGMA" />
-              <Tag text="PHOTOSHOP" />
+      <FlatList
+        data={data}
+        renderItem={({ item }: any) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Proposition')}
+            style={styles.projectContainer}
+          >
+            <View style={styles.profileContainer}>
+              <Profile marginTop={0} />
             </View>
-          </View>
-        </View>
-        <View style={styles.projectContainer}>
-          <View style={styles.profileContainer}>
-            <Profile marginTop={0} />
-          </View>
-          <View style={styles.application}>
-            <Text style={styles.timeline}>Posted 8 days ago</Text>
-            <Text style={styles.applicationHeader}>Create an application</Text>
-            <Text style={styles.description}>Description</Text>
-            <Text style={styles.applicationText}>
-              I need a designer for my new website.{'\n'}
-              The project is just at the beginning and I{'\n'}
-              need wireframes before I start coding the{'\n'}
-              website. I only want fireframes and I don't{'\n'}
-              want prototype or UI design.{'\n'}
-            </Text>
-          </View>
-        </View>
-        <View style={styles.projectContainer}>
-          <View style={styles.profileContainer}>
-            <Profile marginTop={0} />
-          </View>
-          <View style={styles.application}>
-            <Text style={styles.timeline}>Posted 8 days ago</Text>
-            <Text style={styles.applicationHeader}>Create an application</Text>
-            <Text style={styles.description}>Description</Text>
-            <Text style={styles.applicationText}>
-              I need a designer for my new website.{'\n'}
-              The project is just at the beginning and I{'\n'}
-              need wireframes before I start coding the{'\n'}
-              website. I only want fireframes and I don't{'\n'}
-              want prototype or UI design.{'\n'}
-            </Text>
-          </View>
-        </View>
-      </ScrollView>
+            <View style={styles.application}>
+              <Text style={styles.timeline}>Posted 8 days ago</Text>
+              <Text style={styles.applicationHeader}>
+                Create an application
+              </Text>
+              <Text style={styles.description}>Description</Text>
+              <Text style={styles.applicationText}>{item.text}</Text>
+              <View style={styles.priceContainer}>
+                <Text
+                  style={{
+                    color: colors.ROYAL_PURPLE,
+                    fontSize: getHeight(13),
+                  }}
+                >
+                  16 propositions
+                </Text>
+                <Text
+                  style={{
+                    fontSize: getHeight(16),
+                    color: colors.PURPLE,
+                    fontFamily: fontFamily.FONT_FAMILY_BOLD,
+                  }}
+                >
+                  $ 2400
+                </Text>
+              </View>
+              <View style={styles.tagContainer}>
+                <Tag text="UX/UI" />
+                <Tag text="DESIGN" />
+                <Tag text="FIGMA" />
+                <Tag text="PHOTOSHOP" />
+              </View>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
     </View>
   )
 }
