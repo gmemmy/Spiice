@@ -61,7 +61,10 @@ const Proposition = ({ navigation }: any) => {
         </View>
       </View>
       <View style={styles.buttonView}>
-        <Button buttonText="Make a proposition" />
+        <Button
+          buttonText="Make a proposition"
+          onPress={() => navigation.navigate('Send Proposition')}
+        />
       </View>
     </View>
   )
