@@ -5,7 +5,7 @@
 <img width="466" alt="Screenshot 2020-07-01 at 12 17 11 AM" src="https://user-images.githubusercontent.com/36506774/86186479-1f3b6800-bb31-11ea-9809-8b9dfab98e74.png">
 
 <h2 align="center">Onboarding</h2>
-<div style="display: flex">
+<div style="display: flex; align-items: center">
   <img width="466" alt="Screenshot 2020-07-01 at 12 17 20 AM" src="https://user-images.githubusercontent.com/36506774/86186489-24001c00-bb31-11ea-9278-be96803bde5e.png">
   <img width="466" alt="Screenshot 2020-07-01 at 12 27 45 AM" src="https://user-images.githubusercontent.com/36506774/86186748-b99bab80-bb31-11ea-9c03-0fef66bf3a8d.png">
   <img width="466" alt="Screenshot 2020-07-01 at 12 27 48 AM" src="https://user-images.githubusercontent.com/36506774/86186753-bc969c00-bb31-11ea-9c6b-8d7105bd2f34.png">
