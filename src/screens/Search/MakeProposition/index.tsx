@@ -1,14 +1,14 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, Linking } from 'react-native'
 import styles from './styles'
+import colors from '../../../utils/colors'
+import { getHeight, fontFamily } from '../../../utils/styles'
 
 // components
 import BackButton from '../../../components/Widgets/BackButton'
 import Button from '../../../components/Widgets/Button'
 import Profile from '../../../components/Widgets/Profile'
 import Tag from '../../../components/Widgets/Tag'
-import colors from '../../../utils/colors'
-import { getHeight, fontFamily } from '../../../utils/styles'
 
 const Proposition = ({ navigation }: any) => {
   return (

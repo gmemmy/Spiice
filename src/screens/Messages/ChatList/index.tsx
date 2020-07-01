@@ -5,7 +5,7 @@ import chatList from './constants'
 import { checkOddEvenNumber, stringBreak } from '../../../utils/helpers'
 import colors from '../../../utils/colors'
 
-const ChatList = () => {
+const ChatList = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Messages</Text>
@@ -22,6 +22,7 @@ const ChatList = () => {
                   : colors.WHITE,
               },
             ]}
+            onPress={() => navigation.navigate('Chat')}
           >
             <Image style={styles.profilePhoto} source={item.profilePhoto} />
             <View style={styles.nameAndMessageContainer}>

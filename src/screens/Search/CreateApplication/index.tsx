@@ -9,12 +9,12 @@ import {
 } from 'react-native'
 import styles from './styles'
 import data from './constants'
+import colors from '../../../utils/colors'
+import { getHeight, fontFamily } from '../../../utils/styles'
 
 // components
 import Profile from '../../../components/Widgets/Profile'
 import Tag from '../../../components/Widgets/Tag'
-import colors from '../../../utils/colors'
-import { getHeight, fontFamily } from '../../../utils/styles'
 
 const Application = ({ navigation }: any) => {
   return (
