@@ -1,6 +1,9 @@
-import React from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import React, { useState, useEffect, useCallback } from 'react'
+import { View, Image, TouchableOpacity } from 'react-native'
+import { BlurView } from 'react-native-blur'
+import { GiftedChat, Bubble } from 'react-native-gifted-chat'
 import styles from './styles'
+import messagesArray from './constants'
 
 // components
 import BackButton from '../../../components/Widgets/BackButton'
@@ -10,9 +13,26 @@ const phone = require('../../../../assets/phone.png')
 const options = require('../../../../assets/options.png')
 
 const Chat = () => {
+  const [messages, setMessages] = useState<any>([])
+
+  useEffect(() => {
+    setMessages(messagesArray)
+  }, [])
+
+  const onSend = useCallback((messages = []) => {
+    setMessages(
+      (
+        previousMessages:
+          | import('react-native-gifted-chat').IMessage[]
+          | undefined
+      ) => GiftedChat.append(previousMessages, messages)
+    )
+    messagesArray.push(messages[0])
+  }, [])
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      <BlurView blurType="light" style={styles.header}>
         <BackButton />
         <View
           style={{
@@ -24,14 +44,38 @@ const Chat = () => {
           <View style={styles.profileContainer}>
             <Profile />
           </View>
-          <TouchableOpacity>
-            <Image style={styles.icon} source={phone} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image style={styles.icon} source={options} />
-          </TouchableOpacity>
+          <View style={styles.options}>
+            <TouchableOpacity>
+              <Image style={styles.icon} source={phone} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image style={styles.icon} source={options} />
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </BlurView>
+      <GiftedChat
+        messages={messages}
+        onSend={(messages) => onSend(messages)}
+        user={{
+          _id: 1,
+        }}
+        renderBubble={(props) => {
+          return (
+            <Bubble
+              {...props}
+              wrapperStyle={{
+                left: {
+                  backgroundColor: '#9279FE',
+                },
+                right: {
+                  backgroundColor: '#CABDFD',
+                },
+              }}
+            />
+          )
+        }}
+      />
     </View>
   )
 }

@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
   header: {
     height: getHeight(160),
     width: getWidth(375),
-    backgroundColor: colors.WHITE,
-    position: 'absolute',
+    backgroundColor: '#5668C6',
     paddingBottom: getHeight(20),
   },
   profileContainer: {
@@ -21,6 +20,13 @@ const styles = StyleSheet.create({
     height: getHeight(18),
     width: getWidth(18),
     resizeMode: 'contain',
+  },
+  options: {
+    flexDirection: 'row',
+    marginTop: getHeight(25),
+    width: getWidth(55),
+    justifyContent: 'space-between',
+    marginRight: getWidth(20),
   },
 })
 
